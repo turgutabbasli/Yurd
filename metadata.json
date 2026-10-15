@@ -1,0 +1,6 @@
+{
+  "name": "Yurd — İnvestisiya Müsabiqələri Portalı",
+  "description": "Sahibkar ən uyğun torpağı tapır, müsabiqəyə onlayn müraciət edir və nəticəni izləyir; dövlət şəffaf qərar verir; investor təsdiqlənmiş layihəni görür.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

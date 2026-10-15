@@ -1,0 +1,88 @@
+[
+  {
+    "parcelCode": "FZL-014",
+    "parcelName": "Qoçəhmədli İntensiv Bağçılıq Sahəsi",
+    "cropKey": "UZUM",
+    "cropName": "Üzüm",
+    "weights": {
+      "chemistry": 30,
+      "structure": 15,
+      "climate": 20,
+      "water": 15,
+      "relief": 10,
+      "cover": 10
+    },
+    "expectedScore": 91,
+    "trafficLight": "YASIL",
+    "excluded": false
+  },
+  {
+    "parcelCode": "FZL-008",
+    "parcelName": "Bala Bəhmənli Dənli Bitkilər Ərazisi",
+    "cropKey": "BUGDA",
+    "cropName": "Buğda",
+    "weights": {
+      "chemistry": 30,
+      "structure": 15,
+      "climate": 20,
+      "water": 15,
+      "relief": 10,
+      "cover": 10
+    },
+    "expectedScore": 83,
+    "trafficLight": "YASIL",
+    "excluded": false
+  },
+  {
+    "parcelCode": "CBR-003",
+    "parcelName": "Böyük Mərcanlı Aqropark Sahəsi",
+    "cropKey": "PAMBIQ",
+    "cropName": "Pambıq",
+    "weights": {
+      "chemistry": 30,
+      "structure": 15,
+      "climate": 20,
+      "water": 15,
+      "relief": 10,
+      "cover": 10
+    },
+    "expectedScore": 85,
+    "trafficLight": "YASIL",
+    "excluded": false
+  },
+  {
+    "parcelCode": "KLB-006",
+    "parcelName": "Zülfüqarlı Dağlıq Kartofçuluq Sahəsi",
+    "cropKey": "KARTOF",
+    "cropName": "Kartof (dağlıq)",
+    "weights": {
+      "chemistry": 30,
+      "structure": 15,
+      "climate": 20,
+      "water": 15,
+      "relief": 10,
+      "cover": 10
+    },
+    "expectedScore": 97,
+    "trafficLight": "YASIL",
+    "excluded": false
+  },
+  {
+    "parcelCode": "FZL-021",
+    "parcelName": "Qaraxanbəyli Dağətəyi Torpaq Sahəsi",
+    "cropKey": "BUGDA",
+    "cropName": "Buğda",
+    "weights": {
+      "chemistry": 30,
+      "structure": 15,
+      "climate": 20,
+      "water": 15,
+      "relief": 10,
+      "cover": 10
+    },
+    "expectedScore": null,
+    "trafficLight": null,
+    "excluded": true,
+    "exclusionReason": "Ərazi minalardan təmizlənməyib (simulyasiya)"
+  }
+]

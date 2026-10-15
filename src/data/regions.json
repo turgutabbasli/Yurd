@@ -1,0 +1,51 @@
+[
+  {
+    "id": "fuzuli",
+    "name": "Füzuli",
+    "centerLat": 39.60,
+    "centerLon": 47.14,
+    "description": "Düzən və dağətəyi ərazilər, üzümçülük, taxılçılıq və bağçılıq üçün yüksək münbitlik."
+  },
+  {
+    "id": "cebrayil",
+    "name": "Cəbrayıl",
+    "centerLat": 39.40,
+    "centerLon": 47.03,
+    "description": "Arazboyu düzənlik, isti iqlim, nar, üzüm və dənli bitkilər üçün optimal şərait."
+  },
+  {
+    "id": "zengilan",
+    "name": "Zəngilan",
+    "centerLat": 39.09,
+    "centerLon": 46.65,
+    "description": "Münbit çökəklik, çay vadiləri, intensiv bağçılıq və subtropik meyvəçilik potensialı."
+  },
+  {
+    "id": "qubadli",
+    "name": "Qubadlı",
+    "centerLat": 39.34,
+    "centerLon": 46.58,
+    "description": "Bərgüşad və Həkəri vadiləri, qoz-fındıq bağları və heyvandarlıq üçün geniş imkanlar."
+  },
+  {
+    "id": "agdam",
+    "name": "Ağdam",
+    "centerLat": 39.99,
+    "centerLon": 46.93,
+    "description": "Geniş Qarabağ düzü, taxılçılıq, pambıqçılıq və sənaye bağçılığı mərkəzi."
+  },
+  {
+    "id": "kelbecer",
+    "name": "Kəlbəcər",
+    "centerLat": 40.10,
+    "centerLon": 46.04,
+    "description": "Yüksək dağlıq yaylaqlar, kartofçuluq, arıçılıq və intensiv heyvandarlıq zonası."
+  },
+  {
+    "id": "lacin",
+    "name": "Laçın",
+    "centerLat": 39.64,
+    "centerLon": 46.55,
+    "description": "Dağlıq meşəətəyi relyef, alp çəmənlikləri, arıçılıq və dağ maldarlığı."
+  }
+]

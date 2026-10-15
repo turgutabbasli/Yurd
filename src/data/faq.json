@@ -1,0 +1,47 @@
+[
+  {
+    "role": "SAHIBKAR",
+    "question": "Müraciətin statusu nə deməkdir?",
+    "answer": "Müraciət ilk olaraq 'Qəbul edilib' statusu alır. Nazirlik operatoru sənədləri yoxlayarkən 'Baxılır' statusuna keçir. Əgər çatışmazlıq varsa 'Əlavə məlumat tələb olunur' statusu verilir və sizə bildiriş gəlir. Yekun qərar qəbul edildikdə status 'Qərar verilib — Təsdiq edilib' və ya 'Rədd edilib' olaraq yenilənir."
+  },
+  {
+    "role": "SAHIBKAR",
+    "question": "Müsabiqə üçün hansı sənədlər lazımdır?",
+    "answer": "Müraciət üçün 3 əsas sənəd məcburidir: Şəxsiyyət vəsiqəsi və ya hüquqi şəxsin dövlət qeydiyyatı şəhadətnaməsi, ətraflı Biznes plan və maliyyə təminatı barədə bank arayışı və ya çıxarış. Sənədlər PDF, JPG və ya PNG formatında, hər biri ən çox 10 MB həcmində olmalıdır."
+  },
+  {
+    "role": "SAHIBKAR",
+    "question": "Torpaq üçün icarə müddəti və şərtləri necədir?",
+    "answer": "Kənd təsərrüfatı torpaqları ilkin olaraq 5 illik icarəyə verilir. İnvestisiya öhdəlikləri və aqrotexniki tələblər yerinə yetirildikdə icarə müddəti 44 ilədək uzadılır. Seçim qaydası nazirlik tərəfindən müəyyən edilir."
+  },
+  {
+    "role": "SAHIBKAR",
+    "question": "Mina təmizlənməsi statusu nə dərəcədə etibarlıdır?",
+    "answer": "Portaldakı mina statusu simulyasiya və nümunə xarakterlidir. Real icraat zamanı ANAMA tərəfindən verilən rəsmi təmizlənmə sertifikatı əsas götürülür."
+  },
+  {
+    "role": "INVESTOR",
+    "question": "İnvestorlar hansı layihələri görə bilir?",
+    "answer": "İnvestorlar yalnız dövlət tərəfindən təsdiq edilmiş, torpaq sahəsi ayrılmış və sahibkarı tərəfindən investor cəlbi üçün təqdim edilmiş layihələri görürlər. Şəxsi sənədlər və rədd edilmiş müraciətlər investorlara göstərilmir."
+  },
+  {
+    "role": "INVESTOR",
+    "question": "'Maraqlanıram' düyməsi nə edir?",
+    "answer": "'Maraqlanıram' düyməsini sıxdıqda, layihə sahibi olan sahibkara və nazirlik sisteminə rəsmi bildiriş göndərilir. Sahibkar sizinlə əlaqə yaradaraq birgə əməkdaşlığı müzakirə edə bilər."
+  },
+  {
+    "role": "INVESTOR",
+    "question": "Torpaq uyğunluq balı nəyə əsaslanır?",
+    "answer": "Bal 6 əsas meyar üzrə elmi aqroekoloji modellə hesablanır: Torpaq kimyası (30%), Torpaq quruluşu (15%), İqlim (20%), Su təminatı (15%), Relyef (10%) və Ərazi örtüyü (10%)."
+  },
+  {
+    "role": "NAZIRLIK",
+    "question": "Dörd göz prinsipi (four-eyes rule) necə işləyir?",
+    "answer": "Müsabiqəni yaradan operator onu özü təsdiq edib dərc edə bilməz; bu əməliyyatı yalnız təsdiqləyici icra edə bilər. Eynilə, müraciət üzrə təsdiq və ya rədd təklifini operator irəli sürür, yekun qərarı isə təsdiqləyici təsdiq edir."
+  },
+  {
+    "role": "NAZIRLIK",
+    "question": "EKTİS inteqrasiyası nələri əhatə edir?",
+    "answer": "Sahibkarın VÖEN-nin yoxlanılması, yeni müsabiqələrin EKTİS reyestrinə ötürülməsi, qəbul edilən müraciətlərin qeydiyyatı və verilmiş yekun qərarların nazirliyin vahid sisteminə sinxronizasiyası simulyasiya olunur."
+  }
+]

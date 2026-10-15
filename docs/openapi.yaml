@@ -1,0 +1,132 @@
+openapi: 3.0.3
+info:
+  title: Yurd — Azad Edilmiş Ərazilərdə İnvestisiya Müsabiqələri Portalı API
+  description: Sahibkar, İnvestor və Nazirlik rolları üçün torpaq müsabiqələri, müraciətlər, EKTİS inteqrasiyası və qiymətləndirmə xidməti.
+  version: 1.0.0
+servers:
+  - url: /api
+    description: Yerli API serveri
+paths:
+  /auth/login:
+    post:
+      summary: Sistemə daxil olmaq
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  example: sahibkar@yurd.local
+                password:
+                  type: string
+                  example: Sinaq1234!
+      responses:
+        '200':
+          description: Uğurlu giriş
+        '401':
+          description: E-poçt və ya şifrə yanlışdır
+        '429':
+          description: Çox sayda uğursuz cəhd. Bir dəqiqə sonra yenidən yoxlayın.
+
+  /competitions:
+    get:
+      summary: Müsabiqələrin siyahısı
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [QARALAMA, TESDIQ_GOZLEYIR, DERC_EDILIB, BAGLANIB]
+      responses:
+        '200':
+          description: Müsabiqələr siyahısı
+
+  /competitions/{id}/approve:
+    post:
+      summary: Müsabiqəni təsdiqlə və dərc et (Yalnız Nazirlik təsdiqləyicisi, dörd göz qaydası)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Müsabiqə dərc edildi, torpaqlar açıq statusa keçdi və EKTİS-ə bildirildi
+        '403':
+          description: Dörd göz prinsipi pozuldu və ya icazə yoxdur
+
+  /parcels:
+    get:
+      summary: Torpaq sahələri və uyğunluq balları
+      parameters:
+        - name: region
+          in: query
+          schema:
+            type: string
+        - name: activity
+          in: query
+          schema:
+            type: string
+        - name: crop
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Torpaq sahələri və qiymətləndirmə nəticələri
+
+  /applications:
+    post:
+      summary: Yeni müsabiqə müraciəti göndərmək
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [competitionId, parcelId, intendedCrop, plannedInvestmentAzn, ownFundsAzn, expectedJobs, planText]
+              properties:
+                competitionId:
+                  type: string
+                parcelId:
+                  type: string
+                intendedCrop:
+                  type: string
+                plannedInvestmentAzn:
+                  type: number
+                ownFundsAzn:
+                  type: number
+                expectedJobs:
+                  type: integer
+                planText:
+                  type: string
+      responses:
+        '200':
+          description: Müraciət qəbul edildi və QM nömrəsi generasiya olundu
+
+  /advisor:
+    post:
+      summary: Süni intellekt torpaq məsləhətçisi sorğusu
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [parcelId, question, mode]
+              properties:
+                parcelId:
+                  type: string
+                question:
+                  type: string
+                mode:
+                  type: string
+                  enum: [SAHIBKAR, INVESTOR]
+      responses:
+        '200':
+          description: Məsləhətçi cavabı və mənbə nişanları

@@ -1,0 +1,72 @@
+[
+  {
+    "voen": "1402345678",
+    "legalName": "Qarabağ Aqro İnvest QSC",
+    "registeredRegion": "Füzuli rayonu",
+    "status": "AKTIV",
+    "director": "Rəşad Məmmədov"
+  },
+  {
+    "voen": "2001234567",
+    "legalName": "Şərqi Zəngəzur Kapital Fondu ASC",
+    "registeredRegion": "Bakı şəhəri",
+    "status": "AKTIV",
+    "director": "Elmir Quliyev"
+  },
+  {
+    "voen": "1703456789",
+    "legalName": "Araz Vadisi Bağçılıq MMC",
+    "registeredRegion": "Cəbrayıl rayonu",
+    "status": "AKTIV",
+    "director": "Samir Əliyev"
+  },
+  {
+    "voen": "1904567890",
+    "legalName": "Həkəri Ekoloji Təsərrüfatı MMC",
+    "registeredRegion": "Zəngilan rayonu",
+    "status": "AKTIV",
+    "director": "Nigar Həsənova"
+  },
+  {
+    "voen": "1505678901",
+    "legalName": "Bərgüşad Aqrokompleks ASC",
+    "registeredRegion": "Qubadlı rayonu",
+    "status": "AKTIV",
+    "director": "Kamran İsmayılov"
+  },
+  {
+    "voen": "1806789012",
+    "legalName": "Qarabağ Dənli Bitkilər Birliyi MMC",
+    "registeredRegion": "Ağdam rayonu",
+    "status": "AKTIV",
+    "director": "Tural Rzayev"
+  },
+  {
+    "voen": "1607890123",
+    "legalName": "Yaylaq Dağ Təsərrüfatı Kooperativi",
+    "registeredRegion": "Kəlbəcər rayonu",
+    "status": "AKTIV",
+    "director": "Vüqar Paşayev"
+  },
+  {
+    "voen": "1308901234",
+    "legalName": "Zabux Aqro Sənaye MMC",
+    "registeredRegion": "Laçın rayonu",
+    "status": "AKTIV",
+    "director": "Leyla Qasımova"
+  },
+  {
+    "voen": "1109012345",
+    "legalName": "İnkişaf və Bərpa Fermer Təsərrüfatı MMC",
+    "registeredRegion": "Ağdam rayonu",
+    "status": "AKTIV",
+    "director": "Cavid Novruzov"
+  },
+  {
+    "voen": "1201122334",
+    "legalName": "Zəngəzur İpək və Bağçılıq Firması",
+    "registeredRegion": "Zəngilan rayonu",
+    "status": "AKTIV",
+    "director": "Murad Xəlilov"
+  }
+]

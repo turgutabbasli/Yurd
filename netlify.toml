@@ -1,0 +1,15 @@
+# Netlify: static site (Vite build) + Edge Functions for the AI endpoints.
+# Set GEMINI_API_KEY in Site configuration → Environment variables (optional: GROQ_API_KEY, OPENROUTER_API_KEY).
+[build]
+  command = "npm run build:netlify"
+  publish = "dist"
+  edge_functions = "netlify/edge-functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Long-lived caching for hashed build assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

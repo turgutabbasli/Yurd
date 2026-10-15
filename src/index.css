@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --primary-forest: #2F6B3A;
+  --primary-forest-hover: #26572F;
+  --accent-purple: #6B3FA0;
+  --accent-purple-hover: #583286;
+  --earth-brown: #7A5230;
+  --sand-bg: #F4EBDD;
+  --sand-card: #FFFFFF;
+  --dark-text: #1F2A24;
+  --status-draft: #6B7280;
+  --status-submitted: #2E6DB4;
+  --status-review: #D98E04;
+  --status-info-req: #C8553D;
+  --status-decided: #2F6B3A;
+  --traffic-green: #2F6B3A;
+  --traffic-yellow: #D98E04;
+  --traffic-red: #C8553D;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--sand-bg);
+  color: var(--dark-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Site-wide background: earth-toned landscape line art, fixed behind all content */
+.topographic-bg {
+  background-color: #F4EBDD;
+  position: relative;
+  isolation: isolate;
+}
+.topographic-bg::before {
+  content: '';
+  position: fixed; /* a fixed layer instead of background-attachment: fixed, which mobile Safari ignores */
+  inset: 0;
+  background-image: url('/bg-landscape-earth.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Leaflet map container fix */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 10;
+}
+
+/* Smooth modal backdrop and card transitions */
+.modal-backdrop {
+  background-color: rgba(31, 42, 36, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EADBC8;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8A287;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7A5230;
+}
+
+/* Login screen: slow Ken Burns + pointer parallax on the landscape, drifting contour lines */
+.login-scene {
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform 0.6s ease-out;
+  will-change: transform;
+}
+.login-landscape {
+  background-image: url('/hero-landscape.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: login-kenburns 40s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes login-kenburns {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+}
+.login-contours .contour-a { animation: contour-drift 28s ease-in-out infinite alternate; }
+.login-contours .contour-b { animation: contour-drift 34s ease-in-out infinite alternate-reverse; }
+@keyframes contour-drift {
+  from { transform: translate3d(-30px, 0, 0); }
+  to { transform: translate3d(30px, -12px, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .login-landscape,
+  .login-contours .contour-a,
+  .login-contours .contour-b { animation: none; }
+  .login-scene { transition: none; transform: none; }
+}

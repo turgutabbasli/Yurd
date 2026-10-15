@@ -1,0 +1,80 @@
+[
+  {
+    "id": "proj-101",
+    "applicationId": "app-001",
+    "parcelId": "pcl-fzl-002",
+    "entrepreneurId": "usr-sahibkar-1",
+    "entrepreneurMasked": "R. M.",
+    "crop": "UZUM",
+    "requiredFundingAzn": 270000,
+    "expectedJobs": 18,
+    "summary": "Füzuli rayonu Dədəli kəndində 35 ha ərazidə müasir süfrə üzümçülüyü layihəsi. Ərazi minalardan tam təmizlənib, suvarma suyu 1.2 km məsafədəki Köndələnçaydan təmin edilir. İstehsal olunan məhsulun daxili bazar və ixrac üçün yüksək potensialı var.",
+    "visible": true,
+    "createdAt": "2026-08-01T10:00:00Z"
+  },
+  {
+    "id": "proj-102",
+    "applicationId": "app-005",
+    "parcelId": "pcl-zng-007",
+    "entrepreneurId": "usr-applicant-2",
+    "entrepreneurMasked": "S. Ə.",
+    "crop": "UZUM",
+    "requiredFundingAzn": 380000,
+    "expectedJobs": 22,
+    "summary": "Zəngilan rayonu Ağalı kəndində 62 ha sahədə innovativ 'Ağıllı bağ' layihəsi. İntensiv damcı suvarma və avtomatlaşdırılmış idarəetmə ilə yüksək məhsuldarlıq planlaşdırılır.",
+    "visible": true,
+    "createdAt": "2026-08-05T11:00:00Z"
+  },
+  {
+    "id": "proj-103",
+    "applicationId": "app-006",
+    "parcelId": "pcl-cbr-009",
+    "entrepreneurId": "usr-applicant-3",
+    "entrepreneurMasked": "N. H.",
+    "crop": "NAR",
+    "requiredFundingAzn": 230000,
+    "expectedJobs": 12,
+    "summary": "Cəbrayıl rayonu Şükürbəyli kəndində 38 ha sahədə nar bağları və ilkin çeşidləmə mərkəzinin qurulması layihəsi.",
+    "visible": true,
+    "createdAt": "2026-08-10T14:00:00Z"
+  },
+  {
+    "id": "proj-104",
+    "applicationId": "app-007",
+    "parcelId": "pcl-qbd-002",
+    "entrepreneurId": "usr-applicant-4",
+    "entrepreneurMasked": "K. İ.",
+    "crop": "QOZ",
+    "requiredFundingAzn": 280000,
+    "expectedJobs": 15,
+    "summary": "Qubadlı rayonu Xanlıq kəndində 52 ha ərazidə qoz və fındıq bağlarının salınması, ekoloji kənd təsərrüfatı standartlarının tətbiqi.",
+    "visible": true,
+    "createdAt": "2026-08-15T09:30:00Z"
+  },
+  {
+    "id": "proj-105",
+    "applicationId": "app-008",
+    "parcelId": "pcl-klb-001",
+    "entrepreneurId": "usr-applicant-6",
+    "entrepreneurMasked": "V. P.",
+    "crop": "YEM_OTU",
+    "requiredFundingAzn": 190000,
+    "expectedJobs": 10,
+    "summary": "Kəlbəcər İstisu ərazisində 70 ha yaylaq sahəsində ekoloji damazlıq maldarlıq və yem istehsalı layihəsi.",
+    "visible": true,
+    "createdAt": "2026-08-20T12:00:00Z"
+  },
+  {
+    "id": "proj-106",
+    "applicationId": "app-009",
+    "parcelId": "pcl-lcn-004",
+    "entrepreneurId": "usr-applicant-7",
+    "entrepreneurMasked": "L. Q.",
+    "crop": "QOZ",
+    "requiredFundingAzn": 220000,
+    "expectedJobs": 12,
+    "summary": "Laçın rayonu Zabux kəndində dağətəyi meyvəçilik və bal arıçılığı təsərrüfatı.",
+    "visible": true,
+    "createdAt": "2026-08-25T16:00:00Z"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "score": 91,
+  "excluded": false,
+  "exclusionReason": null,
+  "trafficLight": "YASIL",
+  "reasonSentence": "Torpaq münbit və aqrokimyəvi cəhətdən balansdadır, su mənbəyi yaxındır və nəm təminatı yüksəkdir. Diqqət: vegetasiya örtüyü normaldır.",
+  "cropKey": "UZUM",
+  "cropName": "Üzüm",
+  "breakdown": [
+    {
+      "key": "chemistry",
+      "label": "Torpaq kimyası",
+      "weight": 30,
+      "value": 0.94,
+      "light": "YASIL",
+      "sentence": "torpaq münbit və aqrokimyəvi cəhətdən balansdadır",
+      "rawValues": "pH 6,8, Üzvi karbon 16,5 q/kq, Azot 1,4 q/kq",
+      "source": "Region üzrə aqrokimyəvi təhlil",
+      "badge": "Nümunə məlumat"
+    },
+    {
+      "key": "structure",
+      "label": "Torpaq quruluşu",
+      "weight": 15,
+      "value": 0.95,
+      "light": "YASIL",
+      "sentence": "torpağın mexaniki quruluşu optimaldır",
+      "rawValues": "Gil 26%, Qum 38%, Toz 36%",
+      "source": "Region üzrə aqrokimyəvi təhlil",
+      "badge": "Nümunə məlumat"
+    },
+    {
+      "key": "climate",
+      "label": "İqlim",
+      "weight": 20,
+      "value": 0.92,
+      "light": "YASIL",
+      "sentence": "iqlim və temperatur şəraiti əlverişlidir",
+      "rawValues": "Vegetasiya temperaturu 22,1 °C, İllik yağıntı 460 mm",
+      "source": "NASA POWER",
+      "badge": "Həqiqi"
+    },
+    {
+      "key": "water",
+      "label": "Su",
+      "weight": 15,
+      "value": 0.88,
+      "light": "YASIL",
+      "sentence": "su mənbəyi yaxındır və nəm təminatı yüksəkdir",
+      "rawValues": "Rütubət indeksi 0,45, Ən yaxın su 1,8 km (Köndələnçay su anbarı)",
+      "source": "Xəritə ölçmələri",
+      "badge": "Nümunə məlumat"
+    },
+    {
+      "key": "relief",
+      "label": "Relyef",
+      "weight": 10,
+      "value": 0.91,
+      "light": "YASIL",
+      "sentence": "relyef və meyillilik əlverişlidir",
+      "rawValues": "Yamac 3,2°, Hündürlük 280 m",
+      "source": "Rəqəmsal hündürlük modeli",
+      "badge": "Nümunə məlumat"
+    },
+    {
+      "key": "cover",
+      "label": "Ərazi örtüyü",
+      "weight": 10,
+      "value": 0.70,
+      "light": "SARI",
+      "sentence": "vegetasiya örtüyü normaldır",
+      "rawValues": "NDVI 0,38",
+      "source": "Sentinel-2 peyk məlumatı",
+      "badge": "Nümunə məlumat"
+    }
+  ]
+}

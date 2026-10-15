@@ -1,0 +1,90 @@
+[
+  {
+    "key": "UZUM",
+    "name": "Üzüm",
+    "activity": "BAGCHILIQ",
+    "ph": [5.5, 6.0, 7.5, 8.2],
+    "temp": [14, 17, 24, 30],
+    "precip": [300, 450, 800, 1100],
+    "slope": [0, 0, 15, 25],
+    "elevation": [0, 100, 900, 1300],
+    "irrigated": "partly"
+  },
+  {
+    "key": "BUGDA",
+    "name": "Buğda",
+    "activity": "EKINCILIK",
+    "ph": [5.5, 6.0, 7.5, 8.5],
+    "temp": [8, 12, 20, 26],
+    "precip": [300, 400, 800, 1100],
+    "slope": [0, 0, 8, 15],
+    "elevation": [0, 0, 1200, 2000],
+    "irrigated": "no"
+  },
+  {
+    "key": "ARPA",
+    "name": "Arpa",
+    "activity": "EKINCILIK",
+    "ph": [5.5, 6.0, 8.0, 8.8],
+    "temp": [7, 10, 20, 27],
+    "precip": [250, 350, 650, 900],
+    "slope": [0, 0, 10, 18],
+    "elevation": [0, 0, 1500, 2200],
+    "irrigated": "no"
+  },
+  {
+    "key": "NAR",
+    "name": "Nar",
+    "activity": "BAGCHILIQ",
+    "ph": [5.0, 5.5, 7.5, 8.5],
+    "temp": [16, 20, 28, 34],
+    "precip": [250, 350, 700, 1000],
+    "slope": [0, 0, 15, 25],
+    "elevation": [0, 0, 800, 1200],
+    "irrigated": "partly"
+  },
+  {
+    "key": "QOZ",
+    "name": "Fındıq / Qoz",
+    "activity": "BAGCHILIQ",
+    "ph": [5.0, 5.5, 7.0, 8.0],
+    "temp": [10, 14, 22, 28],
+    "precip": [500, 700, 1200, 1600],
+    "slope": [0, 0, 20, 30],
+    "elevation": [0, 50, 1000, 1500],
+    "irrigated": "no"
+  },
+  {
+    "key": "PAMBIQ",
+    "name": "Pambıq",
+    "activity": "EKINCILIK",
+    "ph": [5.8, 6.0, 8.0, 8.8],
+    "temp": [18, 22, 30, 35],
+    "precip": [350, 500, 1000, 1400],
+    "slope": [0, 0, 5, 10],
+    "elevation": [0, 0, 400, 700],
+    "irrigated": "yes"
+  },
+  {
+    "key": "KARTOF",
+    "name": "Kartof (dağlıq)",
+    "activity": "EKINCILIK",
+    "ph": [4.5, 5.0, 6.5, 7.5],
+    "temp": [8, 11, 18, 24],
+    "precip": [400, 500, 900, 1300],
+    "slope": [0, 0, 12, 20],
+    "elevation": [0, 600, 2000, 2600],
+    "irrigated": "partly"
+  },
+  {
+    "key": "YEM_OTU",
+    "name": "Yem otları",
+    "activity": "HEYVANDARLIQ",
+    "ph": [5.0, 5.5, 7.5, 8.5],
+    "temp": [6, 10, 22, 28],
+    "precip": [300, 400, 900, 1300],
+    "slope": [0, 0, 25, 35],
+    "elevation": [0, 0, 2500, 3200],
+    "irrigated": "no"
+  }
+]
