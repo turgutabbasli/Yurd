@@ -8,6 +8,14 @@ import { X, AlertCircle, ArrowRight, ShieldCheck, IdCard, Globe } from 'lucide-r
 const PASSPORT_RE = /^[A-Za-z0-9]{6,12}$/;
 const FIN_RE = /^[0-9A-Za-z]{7}$/;
 
+// Demo accounts for the jury: one click fills the FİN code and signs in
+const DEMO_ACCOUNTS = [
+  { role: 'Sahibkar', fin: '5AB78CD', name: 'Rəşad Məmmədov', color: '#2F6B3A' },
+  { role: 'İnvestor', fin: '6JK99XY', name: 'Elmir Quliyev', color: '#6B3FA0' },
+  { role: 'Nazirlik', fin: '7MN12PZ', name: 'Əli Həsənov', color: '#7A5230' },
+  { role: 'Komissiya', fin: '8RT34WQ', name: 'Vüsal Əhmədov', color: '#2E6DB4' }
+];
+
 interface MyGovLoginModalProps {
   onSuccess: (user: User) => void;
   onClose: () => void;
@@ -36,26 +44,39 @@ export const MyGovLoginModal: React.FC<MyGovLoginModalProps> = ({ onSuccess, onC
     setErrorMsg(null);
   };
 
-  const handleCitizen = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const loginWithFin = async (value: string) => {
     setErrorMsg(null);
-    if (!fin.trim()) {
+    if (!value.trim()) {
       setErrorMsg('FİN kodunu daxil edin.');
       return;
     }
-    if (!FIN_RE.test(fin.trim())) {
+    if (!FIN_RE.test(value.trim())) {
       setErrorMsg('FİN kod 7 simvoldan (hərf və rəqəm) ibarət olmalıdır.');
       return;
     }
     setLoading(true);
     try {
-      const res = await api.loginWithFin(fin);
+      const res = await api.loginWithFin(value);
       onSuccess(res.user);
     } catch (err: any) {
       setErrorMsg(err.message || LABELS.errorGeneral);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCitizen = (e: React.FormEvent) => {
+    e.preventDefault();
+    loginWithFin(fin);
+  };
+
+  // Show the FİN being filled in, then sign in
+  const handleDemo = (demoFin: string) => {
+    if (loading) return;
+    setFin(demoFin);
+    setErrorMsg(null);
+    setLoading(true);
+    setTimeout(() => loginWithFin(demoFin), 450);
   };
 
   const handleForeign = async (e: React.FormEvent) => {
@@ -167,6 +188,30 @@ export const MyGovLoginModal: React.FC<MyGovLoginModalProps> = ({ onSuccess, onC
             <button type="submit" disabled={loading} className={submitBtn}>
               {loading ? <span>Yoxlanılır…</span> : <><span>Daxil ol</span><ArrowRight className="w-4 h-4" /></>}
             </button>
+
+            <div className="pt-4 border-t border-[#EADBC8] space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs font-bold text-[#7A5230]">Demo hesablar (münsiflər üçün)</span>
+                <span className="text-[10px] text-[#7A5230]/80">Bir kliklə daxil olun</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {DEMO_ACCOUNTS.map(acc => (
+                  <button
+                    key={acc.fin}
+                    type="button"
+                    onClick={() => handleDemo(acc.fin)}
+                    disabled={loading}
+                    className="text-left p-3 rounded-xl border border-[#EADBC8] bg-[#F4EBDD]/50 hover:bg-[#F4EBDD] hover:border-[#2F6B3A]/40 transition-colors cursor-pointer disabled:opacity-60"
+                  >
+                    <span className="block text-sm font-extrabold" style={{ color: acc.color }}>
+                      {acc.role}
+                    </span>
+                    <span className="block text-[11px] text-[#1F2A24]">{acc.name}</span>
+                    <span className="block text-[11px] font-mono text-[#7A5230]">FİN: {acc.fin}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </form>
         ) : (
           <form onSubmit={handleForeign} noValidate className="space-y-4">
