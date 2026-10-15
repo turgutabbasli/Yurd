@@ -102,7 +102,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ raised = false }) 
       {open && (
         <div
           style={{ bottom: windowBottom }}
-          className={`fixed right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[min(560px,calc(100vh-12rem))] bg-white rounded-3xl shadow-2xl border border-[#EADBC8] flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4`}
+          className={`fixed right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[min(560px,calc(100dvh-12rem))] bg-white rounded-3xl shadow-2xl border border-[#EADBC8] flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4`}
         >
           {/* Header */}
           <div className="px-4 py-3 bg-gradient-to-r from-[#2F6B3A] to-[#24542E] text-white flex items-center justify-between">
@@ -189,7 +189,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ raised = false }) 
               onChange={e => setInput(e.target.value)}
               maxLength={1000}
               placeholder="Sualınızı yazın…"
-              className="flex-1 px-3.5 py-2.5 rounded-xl border border-[#EADBC8] text-xs text-[#1F2A24] focus:outline-none focus:border-[#2F6B3A]"
+              className="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl border border-[#EADBC8] text-base sm:text-xs text-[#1F2A24] focus:outline-none focus:border-[#2F6B3A]"
             />
             <button
               type="submit"

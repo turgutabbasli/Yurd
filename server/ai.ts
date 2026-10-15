@@ -133,6 +133,14 @@ export async function generate(system: string, turns: ChatTurn[], env: EnvGetter
   throw lastErr || new Error('timeout');
 }
 
+// Short, key-free description of why every provider failed
+function failureReason(err: any): string {
+  const msg = String(err?.message || err || 'unknown');
+  if (msg === 'no-provider') return 'no-provider: GEMINI_API_KEY is not set for this deploy';
+  if (err?.name === 'AbortError') return 'timeout';
+  return msg.replace(/key=[^&\s]+/gi, 'key=***').slice(0, 160);
+}
+
 // ---------- Request handling ----------
 // Simple per-client limit: 20 requests per minute per endpoint (per server instance)
 const hits = new Map<string, number[]>();
@@ -161,8 +169,9 @@ export async function handleChat(body: any, clientKey: string, env: EnvGetter): 
   }
   try {
     return { status: 200, payload: { reply: await generate(CHAT_SYSTEM, turns, env) } };
-  } catch {
-    return { status: 200, payload: { error: UNAVAILABLE } };
+  } catch (err: any) {
+    // `reason` is not shown in the UI; it lets the deploy be diagnosed from the network tab (never contains keys)
+    return { status: 200, payload: { error: UNAVAILABLE, reason: failureReason(err) } };
   }
 }
 
