@@ -96,20 +96,30 @@ async function askOpenAICompatible(url: string, apiKey: string, model: string, s
   return text;
 }
 
+// Env values pasted into a dashboard often carry quotes, spaces or invisible characters; HTTP headers only accept ASCII
+function readKey(env: EnvGetter, name: string): string | undefined {
+  const raw = env(name);
+  if (!raw) return undefined;
+  const key = raw.trim().replace(/^["'“”‘’«»]+|["'“”‘’«»]+$/g, '').replace(/[\s\u200B-\u200D\u2060\uFEFF]/g, '');
+  if (!key) return undefined;
+  if (/[^\x21-\x7E]/.test(key)) throw new Error(`invalid-key: ${name} contains non-ASCII characters (placeholder or copy error)`);
+  return key;
+}
+
 export async function generate(system: string, turns: ChatTurn[], env: EnvGetter): Promise<string> {
   const attempts: Array<{ name: string; run: (timeoutMs: number) => Promise<string> }> = [];
-  const gemini = env('GEMINI_API_KEY');
+  const gemini = readKey(env, 'GEMINI_API_KEY');
   if (gemini) {
     const primary = env('GEMINI_MODEL') || 'gemini-flash-lite-latest';
     attempts.push({ name: `gemini:${primary}`, run: t => askGemini(gemini, primary, true, system, turns, t) });
     attempts.push({ name: 'gemini:gemini-flash-latest', run: t => askGemini(gemini, 'gemini-flash-latest', false, system, turns, t) });
   }
-  const groq = env('GROQ_API_KEY');
+  const groq = readKey(env, 'GROQ_API_KEY');
   if (groq) {
     const model = env('GROQ_MODEL') || 'llama-3.3-70b-versatile';
     attempts.push({ name: 'groq', run: t => askOpenAICompatible('https://api.groq.com/openai/v1/chat/completions', groq, model, system, turns, t) });
   }
-  const openrouter = env('OPENROUTER_API_KEY');
+  const openrouter = readKey(env, 'OPENROUTER_API_KEY');
   if (openrouter) {
     const model = env('OPENROUTER_MODEL') || 'meta-llama/llama-3.3-70b-instruct:free';
     attempts.push({ name: 'openrouter', run: t => askOpenAICompatible('https://openrouter.ai/api/v1/chat/completions', openrouter, model, system, turns, t) });
