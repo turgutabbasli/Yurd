@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FilterSelect } from './FilterSelect';
 import {
   Parcel,
   Competition,
@@ -604,17 +605,19 @@ export const MinistryView: React.FC<MinistryViewProps> = ({
 
             {/* Filter */}
             <div className="flex items-center gap-2">
-              <select
+              <FilterSelect
                 value={appStatusFilter}
-                onChange={e => setAppStatusFilter(e.target.value)}
-                className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24]"
-              >
-                <option value="">Bütün statuslar</option>
-                <option value="QEBUL_EDILIB">Qəbul edilib</option>
-                <option value="BAXILIR">Baxılır</option>
-                <option value="ELAVE_MELUMAT">Əlavə məlumat tələb olunur</option>
-                <option value="QERAR_VERILIB">Qərar verilib</option>
-              </select>
+                onChange={setAppStatusFilter}
+                options={[
+                  { value: '', label: 'Bütün statuslar' },
+                  { value: 'QEBUL_EDILIB', label: 'Qəbul edilib' },
+                  { value: 'BAXILIR', label: 'Baxılır' },
+                  { value: 'ELAVE_MELUMAT', label: 'Əlavə məlumat tələb olunur' },
+                  { value: 'QERAR_VERILIB', label: 'Qərar verilib' }
+                ]}
+                ariaLabel="Status"
+                className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24] cursor-pointer"
+              />
             </div>
           </div>
 

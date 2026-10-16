@@ -46,12 +46,8 @@ export const MyGovLoginModal: React.FC<MyGovLoginModalProps> = ({ onSuccess, onC
 
   const loginWithFin = async (value: string) => {
     setErrorMsg(null);
-    if (!value.trim()) {
-      setErrorMsg('FİN kodunu daxil edin.');
-      return;
-    }
     if (!FIN_RE.test(value.trim())) {
-      setErrorMsg('FİN kod 7 simvoldan (hərf və rəqəm) ibarət olmalıdır.');
+      setErrorMsg('FİN kod 7 simvoldan ibarət olmalıdır');
       return;
     }
     setLoading(true);

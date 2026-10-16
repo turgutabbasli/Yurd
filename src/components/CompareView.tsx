@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FilterSelect } from './FilterSelect';
 import { Parcel, Crop, Region, Competition } from '../types';
 import { LABELS, formatArea, formatMoney, formatDecimal, formatCountdown } from '../labels';
 import { calculateSuitabilityScore } from '../scoring';
@@ -224,18 +225,16 @@ export const CompareView: React.FC<CompareViewProps> = ({
           </label>
 
           {/* Crop selector */}
-          <select
+          <FilterSelect
             value={selectedCrop.key}
-            onChange={e => {
-              const c = crops.find(x => x.key === e.target.value);
+            onChange={v => {
+              const c = crops.find(x => x.key === v);
               if (c) setSelectedCrop(c);
             }}
+            options={crops.map(c => ({ value: c.key, label: `${c.name} üçün bal` }))}
+            ariaLabel="Bitki"
             className="px-3 py-2 rounded-xl border border-[#EADBC8] text-xs font-bold bg-white text-[#1F2A24] cursor-pointer"
-          >
-            {crops.map(c => (
-              <option key={c.key} value={c.key}>{c.name} üçün bal</option>
-            ))}
-          </select>
+          />
         </div>
       </div>
 

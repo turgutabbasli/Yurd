@@ -410,8 +410,10 @@ export function App() {
         </div>
       )}
 
-      {/* AI chatbot, available to everyone */}
-      <ChatbotWidget raised={view === 'parcelDetail' || (compareParcelIds.length > 0 && view !== 'compare')} />
+      {/* AI chatbot, only after login */}
+      {currentUser && view !== 'landing' && (
+        <ChatbotWidget raised={view === 'parcelDetail' || (compareParcelIds.length > 0 && view !== 'compare')} />
+      )}
 
       {/* FAQ Modal */}
       {faqModalOpen && (

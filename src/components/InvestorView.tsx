@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FilterSelect } from './FilterSelect';
 import { ProjectListing, Parcel, Region, Crop, User } from '../types';
 import { LABELS, formatArea, formatMoney, formatDateAz, formatDurationMonths } from '../labels';
 import { calculateSuitabilityScore } from '../scoring';
@@ -90,7 +91,7 @@ export const InvestorView: React.FC<InvestorViewProps> = ({
               activeTab === 'myInterests' ? 'bg-white text-[#6B3FA0] shadow-sm' : 'text-white/80 hover:text-white'
             }`}
           >
-            Maraq bildirdiklərim ({projects.filter(p => p.interestedByMe).length})
+            Maraqlandıqlarım ({projects.filter(p => p.interestedByMe).length})
           </button>
           <button
             onClick={() => setActiveTab('myOffers')}
@@ -146,27 +147,21 @@ export const InvestorView: React.FC<InvestorViewProps> = ({
             Filtrlər:
           </span>
 
-          <select
+          <FilterSelect
             value={selectedRegion}
-            onChange={e => setSelectedRegion(e.target.value)}
+            onChange={setSelectedRegion}
+            options={[{ value: '', label: 'Bütün rayonlar' }, ...regions.map(r => ({ value: r.id, label: r.name }))]}
+            ariaLabel="Rayon"
             className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24] cursor-pointer"
-          >
-            <option value="">Bütün rayonlar</option>
-            {regions.map(r => (
-              <option key={r.id} value={r.id}>{r.name}</option>
-            ))}
-          </select>
+          />
 
-          <select
+          <FilterSelect
             value={selectedCrop}
-            onChange={e => setSelectedCrop(e.target.value)}
+            onChange={setSelectedCrop}
+            options={[{ value: '', label: 'Bütün bitkilər' }, ...crops.map(c => ({ value: c.key, label: c.name }))]}
+            ariaLabel="Bitki"
             className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24] cursor-pointer"
-          >
-            <option value="">Bütün bitkilər</option>
-            {crops.map(c => (
-              <option key={c.key} value={c.key}>{c.name}</option>
-            ))}
-          </select>
+          />
 
           {(selectedRegion || selectedCrop) && (
             <button

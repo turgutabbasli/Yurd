@@ -492,7 +492,7 @@ export const ParcelDetailPage: React.FC<ParcelDetailPageProps> = ({
                           : 'bg-[#C8553D] text-white'
                       }`}
                     >
-                      {res.score ?? 0}
+                      %{res.score ?? 0}
                     </span>
                   </div>
                   <div className="w-full bg-[#EADBC8] h-2 rounded-full overflow-hidden">

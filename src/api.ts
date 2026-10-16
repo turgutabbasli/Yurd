@@ -31,6 +31,7 @@ import {
 import { maskFin } from './labels';
 
 const STORAGE_KEY_PREFIX = 'yurd_portal_v4_';
+const DEMO_SAHIBKAR_FIN = '5AB78CD'; // demo Sahibkar account used for any other valid FİN
 
 function getStorage<T>(key: string, defaultValue: T): T {
   try {
@@ -278,15 +279,17 @@ export const api = {
   // Azerbaijani citizens: FİN code (7 letters/digits). The role comes from the account.
   async loginWithFin(finInput: string): Promise<{ token: string; user: User }> {
     const fin = finInput.trim().toUpperCase();
-    if (!fin) throw new Error('FİN kodunu daxil edin.');
     if (!/^[0-9A-Z]{7}$/.test(fin)) {
-      throw new Error('FİN kod 7 simvoldan (hərf və rəqəm) ibarət olmalıdır.');
+      throw new Error('FİN kod 7 simvoldan ibarət olmalıdır');
     }
     const key = 'fin:' + fin;
     if (!db.checkRateLimit(key)) {
       throw new Error('Çox sayda uğursuz cəhd. Bir dəqiqə sonra yenidən yoxlayın.');
     }
-    const user = db.users.find(u => !u.isForeign && (u.fin || '').toUpperCase() === fin);
+    // Demo: a valid FİN without its own account signs in as the demo Sahibkar, so anyone can try the portal
+    const user =
+      db.users.find(u => !u.isForeign && (u.fin || '').toUpperCase() === fin) ||
+      db.users.find(u => !u.isForeign && (u.fin || '').toUpperCase() === DEMO_SAHIBKAR_FIN);
     if (!user || user.active === false) {
       db.recordLoginFailure(key);
       throw new Error('Bu FİN kod ilə portalda hesab tapılmadı.');

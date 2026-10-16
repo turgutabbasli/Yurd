@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { FilterSelect } from './FilterSelect';
 import { Parcel, Region, Crop } from '../types';
 import { LABELS, formatArea, formatCountdown } from '../labels';
 import {
@@ -415,29 +416,28 @@ export const TorpaqTapFlow: React.FC<TorpaqTapFlowProps> = ({
               </span>
 
               {/* Region filter */}
-              <select
+              <FilterSelect
                 value={selectedRegion}
-                onChange={e => setSelectedRegion(e.target.value)}
+                onChange={setSelectedRegion}
+                options={[{ value: '', label: 'Bütün rayonlar' }, ...regions.map(r => ({ value: r.id, label: r.name }))]}
+                ariaLabel="Rayon"
                 className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24] cursor-pointer"
-              >
-                <option value="">Bütün rayonlar</option>
-                {regions.map(r => (
-                  <option key={r.id} value={r.id}>{r.name}</option>
-                ))}
-              </select>
+              />
 
               {/* Activity filter */}
-              <select
+              <FilterSelect
                 value={selectedActivity}
-                onChange={e => setSelectedActivity(e.target.value)}
+                onChange={setSelectedActivity}
+                options={[
+                  { value: '', label: 'Bütün fəaliyyətlər' },
+                  { value: 'BAGCHILIQ', label: 'Bağçılıq' },
+                  { value: 'EKINCILIK', label: 'Əkinçilik' },
+                  { value: 'HEYVANDARLIQ', label: 'Heyvandarlıq' },
+                  { value: 'ARICILIQ', label: 'Arıçılıq' }
+                ]}
+                ariaLabel="Fəaliyyət"
                 className="px-3 py-1.5 rounded-xl border border-[#EADBC8] text-xs font-bold bg-[#F4EBDD]/40 text-[#1F2A24] cursor-pointer"
-              >
-                <option value="">Bütün fəaliyyətlər</option>
-                <option value="BAGCHILIQ">Bağçılıq</option>
-                <option value="EKINCILIK">Əkinçilik</option>
-                <option value="HEYVANDARLIQ">Heyvandarlıq</option>
-                <option value="ARICILIQ">Arıçılıq</option>
-              </select>
+              />
 
               {/* Reset Filter Button */}
               {(selectedRegion || selectedActivity || selectedCompetition || maxHaFilter < 600) && (
